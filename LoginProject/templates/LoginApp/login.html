@@ -1,0 +1,21 @@
+{% extends 'LoginApp/base.html' %}
+
+{% block body_block %}
+<div class="jumbotron">
+  <h2>Login Page</h2>
+
+  <form action="{% url 'LoginApp:userLogin' %}" method="post">
+    {% csrf_token %}
+
+    <label for="username">Username:</label>
+    <input type="text" name="username">
+    <br><br>
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+    <br><br>
+    <input type="submit" value="Login">
+
+  </form>
+
+</div>
+{% endblock %}
